@@ -11,6 +11,11 @@ export default class ExpressServer {
     return this;
   }
 
+  database(initDatabase) {
+    initDatabase();
+    return this;
+  }
+
   listen(networkPort = process.env.PORT) {
     console.log(`Listening on port http://localhost:${networkPort}`);
     http.createServer(app).listen(networkPort);
